@@ -239,6 +239,7 @@ void handle_websocket(int client_sockfd, const struct http_headers *upgrade_head
 
 				upcase(masked_payload_data);
 
+				// Echo the upcased message back to the client
 				send_websocket_frame(client_sockfd, masked_payload_data, payload_len);
 			}
 		}
